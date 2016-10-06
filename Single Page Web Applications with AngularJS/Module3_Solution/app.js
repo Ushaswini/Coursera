@@ -33,7 +33,7 @@ function FoundItemsDirective(){
 
     narrowItDown.getList = function(){
       if(narrowItDown.searchText){
-        var promise =  MenuSearchService.getMatchedMenuItems(narrowItDown.searchText);
+        var promise =  MenuSearchService.getMatchedMenuItems(narrowItDown.searchText.toLowerCase());
         promise.then(function(response){
           narrowItDown.found =response.matchedItems;
           if(response.matchedItems.length >0){
